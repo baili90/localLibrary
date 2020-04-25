@@ -47,10 +47,8 @@ exports.author_create_get = (req, res) => {
 exports.author_create_post = [
 
   // Validate fields.
-  body('first_name').isLength({ min: 1 }).trim().withMessage('First name must be specified.')
-      .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
-  body('family_name').isLength({ min: 1 }).trim().withMessage('Family name must be specified.')
-      .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
+  body('first_name').isLength({ min: 1 }).trim().withMessage('必须输入名字'),
+  body('family_name').isLength({ min: 1 }).trim().withMessage('必须输入姓氏'),
   body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601(),
   body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601(),
 

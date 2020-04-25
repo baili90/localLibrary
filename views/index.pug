@@ -1,19 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #[em LocalLibrary], a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
+  h1 私人藏书馆
+  p 谢谢你的耐心等待 ^-^
+  p 这是我在学习Node.js的过程中做的练习项目，非常简单，不过提供了基本的功能，算是迈进后端第一步。
+  p 如非必要，请不要随意更改已有图书信息哟，添加随意～
+  p 删除功能就不在这里提供了，谢谢理解。
 
-  h1 Dynamic content
+  h1 清单
 
   if error
     p Error getting dynamic content.
   else
-    p The library has the following record counts:
+    p 项目有这么多条目:
 
     ul
-      li #[strong Books:] !{data.book_count}
-      li #[strong Copies:] !{data.book_instance_count}
-      li #[strong Copies available:] !{data.book_instance_available_count} 
-      li #[strong Authors:] !{data.author_count}
-      li #[strong Genres:] !{data.genre_count}
+      li #[strong 书籍:] !{data.book_count}
+      li #[strong 馆藏:] !{data.book_instance_count}
+      //- li #[strong Copies available:] !{data.book_instance_available_count} 
+      li #[strong 作者:] !{data.author_count}
+      li #[strong 分类:] !{data.genre_count}
